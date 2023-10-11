@@ -1,4 +1,4 @@
-# game_app
+# Flutter desktop game application
 
 A new Flutter project.
 
