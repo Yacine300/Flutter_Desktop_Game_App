@@ -1,6 +1,6 @@
 # Flutter desktop game application
 
-A new Flutter project.
+A beautiful modern UI - first version.
 
 ## Getting Started
 
