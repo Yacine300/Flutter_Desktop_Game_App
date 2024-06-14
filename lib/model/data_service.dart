@@ -58,4 +58,8 @@ List<Map<String, dynamic>> gamesCategory = [
 List<IconData> navBarIcons = [
   Icons.home_rounded,
   Icons.bookmark_rounded,
+  Icons.person,
+  Icons.settings,
+  Icons.message,
+  Icons.info,
 ];
