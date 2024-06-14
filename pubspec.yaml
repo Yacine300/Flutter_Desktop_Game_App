@@ -36,8 +36,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   delayed_display: ^2.0.0
-  video_player_win: ^1.0.0
-  video_player: ^2.5.1
+  #video_player_media_kit: ^1.0.5
+  #media_kit_libs_windows_video: any
+  media_kit: ^1.1.10                             # Primary package.
+  media_kit_video: ^1.2.4                        # For video rendering.
+  media_kit_libs_video: ^1.0.4 
+  #video_player_win: ^1.0.0
+  #video_player: ^2.5.1
   simple_circular_progress_bar: ^1.0.2
   
 
