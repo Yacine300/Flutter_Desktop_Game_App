@@ -1,42 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:game_app/view/home/components/game_trailer.dart';
-import 'package:video_player/video_player.dart';
+import 'package:media_kit_video/media_kit_video.dart';
 
 class VideoPlayerWidget extends StatefulWidget {
-  // ignore: prefer_typing_uninitialized_variables
-  final initializeVideoPlayerFuture;
-  final VideoPlayerController videoController;
+  final VideoController videoController;
 
-  VideoPlayerWidget(
-      {required this.initializeVideoPlayerFuture,
-      required this.videoController});
+  const VideoPlayerWidget({super.key, required this.videoController});
 
   @override
-  _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();
+  VideoPlayerWidgetState createState() => VideoPlayerWidgetState();
 }
 
-class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
+class VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: widget.initializeVideoPlayerFuture,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          return AspectRatio(
-            aspectRatio: controller.value.aspectRatio,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: VideoPlayer(widget.videoController),
-            ),
-          );
-        } else {
-          return Center(
-            child: CircularProgressIndicator(
-              color: Theme.of(context).primaryColor,
-            ),
-          );
-        }
-      },
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(15),
+      child: Video(
+        height: 300,
+        width: 300,
+        filterQuality: FilterQuality.high,
+        controller: widget.videoController,
+      ),
     );
   }
 }
