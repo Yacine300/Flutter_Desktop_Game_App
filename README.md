@@ -1,5 +1,5 @@
 # Flutter desktop game application
-<img src="https://github.com/Yacine300/money_tracking/blob/main/assets/images/cover_money_tracking.png" alt="Game App" />
+<img src="https://github.com/Yacine300/game_app/blob/main/assets/images/coverr.png" alt="Game App" />
 A beautiful modern UI - first version.
 
 ## Getting Started
