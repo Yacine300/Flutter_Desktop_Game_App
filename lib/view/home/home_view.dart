@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
       backgroundColor: Theme.of(context).colorScheme.background,
       body: const Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: MarginManager.m12, vertical: MarginManager.m12),
+            horizontal: MarginManager.m12, vertical: MarginManager.m8),
         child: Row(
           children: [
             HomeVerticalNavBar(),
