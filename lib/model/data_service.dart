@@ -10,6 +10,7 @@ List<Game> dummyGames = [
           "The Last of Us is a post-apocalyptic video game where Joel, a survivor, escorts Ellie, an immune teenager, to a group called the Fireflies. They believe Ellie could lead to a cure for a fungal infection thats turned most people into hostile creatures. Their journey is fraught with dangers, including hostile humans and infected creatures.",
       id: DateTime.now().toIso8601String(),
       imageAsset: "assets/images/theLastOfUs.jpg",
+      bigImage: 'assets/images/ellie.png',
       trailerUrl:
           "https://v1.pinimg.com/videos/720p/27/2f/55/272f5536f391d3efde20d60c1c50ef91.mp4"),
   Game(
@@ -19,6 +20,7 @@ List<Game> dummyGames = [
           "Assassin's Creed Mirage is an upcoming action-adventure game developed by Ubisoft Bordeaux and published by Ubisoft. The game will be the thirteenth major installment in the Assassin's Creed series and the successor to 2020's Assassin's Creed Valhalla.",
       id: DateTime.now().toIso8601String(),
       imageAsset: "assets/images/mirage.jpg",
+      bigImage: 'assets/images/Assasinn.png',
       trailerUrl:
           "https://v1.pinimg.com/videos/mc/720p/94/34/f1/9434f1256836aa339e78fc701b53f9ec.mp4"),
   Game(
@@ -28,6 +30,7 @@ List<Game> dummyGames = [
           "The former Greek god of war, and his son Atreus as they navigate the world of Norse mythology. The game's story revolves around the impending catastrophe of Ragnarok, the end of the world in Norse mythology, and Kratos and Atreus' journey to prevent it while dealing with new challenges, gods, and creatures from Norse folklore. ",
       id: DateTime.now().toIso8601String(),
       imageAsset: "assets/images/Ragnarök.jpg",
+      bigImage: 'assets/images/boy.png',
       trailerUrl:
           "https://v1.pinimg.com/videos/mc/720p/a0/14/56/a01456fca31e0d35ca92c66289769256.mp4"),
 ];
@@ -55,11 +58,11 @@ List<Map<String, dynamic>> gamesCategory = [
   },
 ];
 
-List<IconData> navBarIcons = [
-  Icons.home_rounded,
-  Icons.bookmark_rounded,
-  Icons.person,
-  Icons.settings,
-  Icons.message,
-  Icons.info,
+List<Map<IconData, String>> navBarIcons = [
+  {Icons.home_rounded: "Home"},
+  {Icons.bookmark_rounded: "Save"},
+  {Icons.person: "Account"},
+  {Icons.settings: "Settings"},
+  {Icons.message: 'Message'},
+  {Icons.info: "Info"}
 ];
