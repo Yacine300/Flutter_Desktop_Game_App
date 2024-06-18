@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
 import 'appBar_menu.dart';
-import 'hi_text.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({
@@ -10,9 +9,6 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [HiText(), AppBarMenu()],
-    );
+    return const AppBarMenu();
   }
 }
