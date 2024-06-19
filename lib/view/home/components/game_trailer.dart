@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:game_app/view/home/components/video_player.dart';
-import 'package:video_player/video_player.dart';
+import 'package:game_app/view/resources/icon_manager.dart';
+import 'package:media_kit/media_kit.dart';
+import 'package:media_kit_video/media_kit_video.dart';
 
 import '../../resources/value_manager.dart';
 
-late VideoPlayerController controller;
-late Future<void> initializeVideoPlayerFuture;
+final player = Player();
+var controller = VideoController(player);
 
 class GameTrailer extends StatefulWidget {
   final String gameVideoUrl;
   const GameTrailer({
+    super.key,
     required this.gameVideoUrl,
   });
 
@@ -24,52 +27,50 @@ class _GameTrailerState extends State<GameTrailer> {
   }
 
   @override
-  void dispose() {
-    super.dispose();
-    controller.dispose();
+  void didUpdateWidget(covariant GameTrailer oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    player.remove(0);
+    player.open(Media(Uri.parse(widget.gameVideoUrl).toString()));
+    player.pause();
+    controller = VideoController(player);
   }
 
   @override
   Widget build(BuildContext context) {
-    controller =
-        VideoPlayerController.networkUrl(Uri.parse(widget.gameVideoUrl));
-
-    initializeVideoPlayerFuture = controller.initialize();
-
     return Stack(
       children: [
         VideoPlayerWidget(
           videoController: controller,
-          initializeVideoPlayerFuture: initializeVideoPlayerFuture,
         ),
         Positioned(
-          bottom: 0,
-          left: 0,
-          right: 0,
+          bottom: 100,
+          left: 100,
+          right: 100,
+          top: 100,
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: MarginManager.m8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  icon: controller.value.isPlaying
+                  icon: !controller.player.state.playing
                       ? const Icon(
-                          Icons.play_arrow,
+                          Icons.play_circle_outline_rounded,
                           color: Colors.white,
+                          size: IconSize.extraLarge,
                         )
-                      : const Icon(
-                          Icons.pause,
-                          color: Colors.white,
-                        ),
+                      : SizedBox(),
                   onPressed: () {
-                    if (controller.value.isPlaying) {
-                      controller.pause();
+                    if (controller.player.state.playing) {
+                      controller.player.pause();
+                      setState(() {});
                     } else {
-                      controller.play();
+                      controller.player.play();
+                      setState(() {});
                     }
                   },
                 ),
-                ValueListenableBuilder(
+                /*ValueListenableBuilder(
                   valueListenable: controller,
                   builder: ((context, value, child) {
                     int minute = controller.value.position.inMinutes;
@@ -77,7 +78,7 @@ class _GameTrailerState extends State<GameTrailer> {
                     return Text("$minute:$second",
                         style: Theme.of(context).textTheme.bodySmall);
                   }),
-                ),
+                ),*/
               ],
             ),
           ),
