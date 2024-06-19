@@ -27,7 +27,7 @@ class HomeBodyCore extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 index != 1
-                    ? HomeBody(constraints: constraints)
+                    ? const HomeBody(/*constraints: constraints*/)
                     : const SavedGamed(),
                 index == 0
                     ? DelayedDisplay(
