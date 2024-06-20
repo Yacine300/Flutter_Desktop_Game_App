@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:game_app/view/home/components/game_trailer.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 
 class VideoPlayerWidget extends StatefulWidget {
@@ -19,6 +18,7 @@ class VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       child: Video(
         height: 300,
         width: 300,
+        fit: BoxFit.cover,
         filterQuality: FilterQuality.high,
         controller: widget.videoController,
       ),
