@@ -22,7 +22,7 @@ class OneGame extends StatelessWidget {
             builder: (ctx, value, child) {
               return Container(
                 width: 250,
-                height: 145,
+                height: 220,
                 padding: const EdgeInsets.symmetric(vertical: 5),
                 decoration: BoxDecoration(
                   color: index != value
@@ -42,7 +42,7 @@ class OneGame extends StatelessWidget {
           ),
           Container(
             width: 250,
-            height: 120,
+            height: 170,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 image: DecorationImage(
