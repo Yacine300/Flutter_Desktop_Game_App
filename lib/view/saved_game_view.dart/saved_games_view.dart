@@ -27,7 +27,7 @@ class _SavedGamedState extends State<SavedGamed> {
               slidingBeginOffset: const Offset(1, 0),
               child: GestureDetector(
                 onTap: () => setState(() {
-                  controller.pause();
+                  controller.player.pause();
                   currentSelectedGame.value = index;
                 }),
                 child: ValueListenableBuilder(
