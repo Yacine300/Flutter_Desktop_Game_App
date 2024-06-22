@@ -19,6 +19,20 @@ class BodyPlusBackground extends StatelessWidget {
         /////////////////
         ////
         Positioned(
+          top: 0,
+          bottom: 0,
+          right: 0,
+          child: Container(
+            height: 1000,
+            width: 800,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    opacity: 0.09,
+                    fit: BoxFit.cover,
+                    image: AssetImage(dummyGames[index].bigImage))),
+          ),
+        ),
+        Positioned(
           right: 50,
           bottom: 10,
           child: DelayedDisplay(
